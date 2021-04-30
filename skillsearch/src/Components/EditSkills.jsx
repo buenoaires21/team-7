@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core/";
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
-
+import Interaction from "./Interaction"
 import Tooltip from '@material-ui/core/Tooltip';
 import Modal from '@material-ui/core/Modal';
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "lightgray",
     minWidth: 275,
     width: "1000px",
-    height: "500px",
+ 
   },
   bullet: {
     display: "inline-block",
@@ -151,11 +151,13 @@ export default function EditSkills() {
           
                   
                 </Box>
+
            
               
               </Box>
+              <Interaction/>
             </Box>
-
+            
           
           </form>
         </CardContent>
