@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 300,
     width: '100%',
     justifyContent:"center"
+
   },
   image: {
     position: 'relative',

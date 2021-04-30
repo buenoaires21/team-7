@@ -23,6 +23,15 @@ const data = [
   { skill: 'SAP', area: 2 },
   { skill: 'Github', area: 30 },
 ];
+const softSkills = [
+  { skill: 'Oratoria', area: 30 },
+  { skill: 'SCRUM', area: 12},
+  { skill: 'Liderazgo', area: 10 },
+  { skill: 'Creatividad', area: 7 },
+  { skill: 'Compromiso', area: 15 },
+  
+];
+
 export default class ChartGraphics extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -37,16 +46,16 @@ export default class ChartGraphics extends React.PureComponent {
 
     return (
       <Box style={{ backgroundColor:"transparent" , width:"1000px",display:"flex",flexDirection:"row", justifyContent:"space-between"}}>
-        <Chart
-          data={chartData}
+        <Chart style={{ width:"45%"}}
+          data={softSkills}
         >
-          <PieSeries
+          <PieSeries 
             valueField="area"
             argumentField="skill"
           />
        
           <Title
-            text="LAS HABILIDADES BLANDAS MAS BUSCADAS"
+            text="HABILIDADES BLANDAS "
           />
         
           <Animation />
@@ -55,7 +64,7 @@ export default class ChartGraphics extends React.PureComponent {
          <Legend/>
 
         </Chart>
-        <Chart
+        <Chart style={{ marginLeft:"10%",width:"45%"}}
           data={chartData}
         >
           <PieSeries
@@ -63,7 +72,7 @@ export default class ChartGraphics extends React.PureComponent {
             argumentField="skill"
           />
           <Title
-            text="LAS HABILIDADES TECNICAS MAS BUSCADAS"
+            text="HABILIDADES TECNICAS"
           />
           <Animation />
          

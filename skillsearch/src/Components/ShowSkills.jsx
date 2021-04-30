@@ -61,6 +61,7 @@ export default function ShowSkills() {
     { key: 3, label: "React" },
     { key: 4, label: "Vue.js" },
   ]);
+  
 
   return (
     <Box className={classes.cont}>

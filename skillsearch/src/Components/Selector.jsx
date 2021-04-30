@@ -33,6 +33,7 @@ export default function Selector() {
   const handleOpen = () => {
     setOpen(true);
   };
+  const areas = ['Comercial, Ventas y Negocios','Administración, Contabilidad y Finanzas','Tecnología, Sistemas y Telecomunicaciones','Producción y Manufactura','Oficios y Otros','Abastecimiento y Logística','Salud, Medicina y Farmacia','Recursos Humanos y Capacitación']
 
   return (
     <div>
@@ -48,12 +49,14 @@ export default function Selector() {
           value={selector}
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>None</em>
+          <MenuItem value="1">
+            <em>Selecciona un área</em>
           </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+
+          {areas.map((data) => {
+          return <MenuItem value={10}>{data}</MenuItem>
+          })
+        }
         </Select>
       </FormControl>
     </div>
