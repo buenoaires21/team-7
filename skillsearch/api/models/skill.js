@@ -6,10 +6,14 @@ const skillSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  score: {
+    type: Number,
+    default: 1,
+  },
   area: {
     type: Schema.Types.ObjectId,
     ref: "area",
   },
 });
 
-module.exports = mongoose.model("skilll", skillSchema);
+module.exports = mongoose.model("skill", skillSchema);

@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Selector from "./Selector"
+import Selector from "./Selector";
 import {
   Button,
   Box,
@@ -11,17 +11,17 @@ import {
   Paper,
   Chip,
 } from "@material-ui/core/";
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
-import Interaction from "./Interaction"
-import Tooltip from '@material-ui/core/Tooltip';
-import Modal from '@material-ui/core/Modal';
+import AddIcon from "@material-ui/icons/Add";
+
+import Fab from "@material-ui/core/Fab";
+import Interaction from "./Interaction";
+import Tooltip from "@material-ui/core/Tooltip";
+import Modal from "@material-ui/core/Modal";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "lightgray",
     minWidth: 275,
     width: "1000px",
- 
   },
   bullet: {
     display: "inline-block",
@@ -68,6 +68,7 @@ export default function EditSkills() {
   return (
     <Box className={classes.cont}>
       <Card className={classes.root} variant="outlined">
+        <Typography>Añadir habilidad</Typography>
         <CardContent>
           <form className={classes.root} noValidate autoComplete="off">
             <Box
@@ -90,31 +91,19 @@ export default function EditSkills() {
                 variant="filled"
               />
               <Typography style={{ marginTop: "2%" }}>Habilidades</Typography>
-              <Paper component="ul" className={classes.look}>
-              {chipData.map((data) => {
-                let icon;
 
-                return (
-                  <li key={data.key}>
-                    <Chip
-                      icon={icon}
-                      label={data.label}
-                      className={classes.chip}
-                    />
-                  </li>
-                );
-              })}
-            </Paper>
-            <Box
+              <Box
                 style={{
-                  display:"flex",
+                  display: "flex",
                   flexDirection: "row",
-                  width: "100%",
-                  justifyContent: "center",
+                  width: "40%",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  marginTop: "2%",
                 }}
               >
                 <TextField
-                  style={{ width: "40%", marginTop: "2%" }}
+                  style={{ width: "70%" }}
                   id="filled-basic"
                   label="Agregar Habilidad"
                   variant="filled"
@@ -124,9 +113,24 @@ export default function EditSkills() {
                     <AddIcon />
                   </Fab>
                 </Tooltip>
-                </Box>
-            <Typography style={{ marginTop: "2%" }}>Áreas</Typography>
-            <Selector/> 
+              </Box>
+              <Paper component="ul" className={classes.look}>
+                {chipData.map((data) => {
+                  let icon;
+
+                  return (
+                    <li key={data.key}>
+                      <Chip
+                        icon={icon}
+                        label={data.label}
+                        className={classes.chip}
+                      />
+                    </li>
+                  );
+                })}
+              </Paper>
+              <Typography style={{ marginTop: "2%" }}>Áreas</Typography>
+              <Selector />
               <Box
                 style={{
                   flexDirection: "column",
@@ -135,30 +139,20 @@ export default function EditSkills() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent:"center"
-                
+                  justifyContent: "center",
                 }}
               >
                 <Box
                   style={{
                     flexDirection: "row",
                     width: "100%",
-                    display:"flex",
-                   justifyContent:"center"
-      
+                    display: "flex",
+                    justifyContent: "center",
                   }}
-                >
-          
-                  
-                </Box>
-
-           
-              
+                ></Box>
               </Box>
-              <Interaction/>
+              <Interaction />
             </Box>
-            
-          
           </form>
         </CardContent>
       </Card>
