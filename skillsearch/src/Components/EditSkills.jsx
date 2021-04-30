@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Selector from "./Selector";
 import {
@@ -56,14 +56,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function EditSkills() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-  const [chipData, setChipData] = React.useState([
-    { key: 0, label: "Angular" },
-    { key: 1, label: "jQuery" },
-    { key: 2, label: "Polymer" },
-    { key: 3, label: "React" },
-    { key: 4, label: "Vue.js" },
-  ]);
+  const bull = <span className={classes.bullet}>•</span>
+  const [input, setInput] = useState("")
+  const [chipData, setChipData] = useState([]);
+
+  const handleAdd = ()=>{
+      if(input) setChipData(c => [...c, input])
+      setInput("")
+  }
 
   return (
     <Box className={classes.cont}>
@@ -107,9 +107,11 @@ export default function EditSkills() {
                   id="filled-basic"
                   label="Agregar Habilidad"
                   variant="filled"
+                  value={input}
+                  onChange={(e)=>setInput(e.target.value)}
                 />
                 <Tooltip title="Add" aria-label="add">
-                  <Fab color="primary" className={classes.fab}>
+                  <Fab color="primary" className={classes.fab} onClick={handleAdd}>
                     <AddIcon />
                   </Fab>
                 </Tooltip>
@@ -119,10 +121,10 @@ export default function EditSkills() {
                   let icon;
 
                   return (
-                    <li key={data.key}>
+                    <li key={data}>
                       <Chip
                         icon={icon}
-                        label={data.label}
+                        label={data}
                         className={classes.chip}
                       />
                     </li>
