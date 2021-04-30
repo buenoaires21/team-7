@@ -12,16 +12,19 @@ const App = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh",
+        minHeight: "98vh",
+        justifyContent: "space-between"
       }}
     >
       <Navbar />
-      <Switch>
+      <div style={{flexGrow: 1}}>
+      <Switch >
         <Route exact path="/" component={Home} />
         <Route path="/showSkills" component={ShowSkills} />
         <Route path="/editSkills" component={EditSkills} />
         <Redirect to="/" />
       </Switch>
+      </div>
       <Footer />
     </div>
   );

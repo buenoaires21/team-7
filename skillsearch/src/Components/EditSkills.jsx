@@ -68,7 +68,7 @@ export default function EditSkills() {
   return (
     <Box className={classes.cont}>
       <Card className={classes.root} variant="outlined">
-        <Typography>Añadir habilidad</Typography>
+        <Typography variant="h5" gutterBottom style={{marginLeft: "5%", marginTop: "2%"}}>Añadir habilidades</Typography>
         <CardContent>
           <form className={classes.root} noValidate autoComplete="off">
             <Box
@@ -126,6 +126,7 @@ export default function EditSkills() {
                         icon={icon}
                         label={data}
                         className={classes.chip}
+                        color="secondary"
                       />
                     </li>
                   );
