@@ -1,13 +1,13 @@
 require("dotenv").config();
 const { SERVER_PORT } = process.env;
-//require("./config");
+require("./config");
 
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 module.exports = app; //para los tests
-//const routes = require("./routes");
+const routes = require("./routes/index");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan("dev"));
 
-//app.use("/api", routes);
+app.use("/api", routes);
 
 app.use((err, req, res, next) => {
   console.error(err);

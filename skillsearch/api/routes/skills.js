@@ -1,8 +1,7 @@
-const router = require('express').Router
+const router = require("express").Router();
 
-const {getAll} = require('../controllers/skillsController')
+const { getAll } = require("../controllers/skillsController");
 
+router.get("/", getAll);
 
-router.get('/', getAll)
-
-module.exports = router
+module.exports = router;
