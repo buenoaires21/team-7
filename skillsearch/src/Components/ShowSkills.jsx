@@ -118,6 +118,7 @@ export default function ShowSkills() {
                             icon={icon}
                             label={data.label}
                             className={classes.chip}
+                            color="primary"
                           />
                         </li>
                       );
@@ -128,12 +129,10 @@ export default function ShowSkills() {
                     flexDirection: "row",
                     width: "100%",
                     display:"flex",
-                   justifyContent:"center"
+                    justifyContent:"center"
       
                   }}
-                >
-          
-                  
+                >                 
                 </Box>
            
               

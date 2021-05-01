@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Selector({selector, setSelector}) {
+export default function Selector() {
   const classes = useStyles();
-  
+  const [selector, setSelector] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
