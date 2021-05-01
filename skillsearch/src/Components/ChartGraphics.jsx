@@ -14,14 +14,14 @@ import {
 import { Animation } from '@devexpress/dx-react-chart';
 
 const data = [
-  { skill: 'Javascript', area: 12 },
-  { skill: 'Python', area: 7 },
-  { skill: 'Excel', area: 15 },
-  { skill: 'Tango', area: 7 },
-  { skill: 'Photoshop', area: 6 },
-  { skill: 'GDS', area: 10 },
-  { skill: 'SAP', area: 2 },
-  { skill: 'Github', area: 30 },
+  { skill: 'Excel', area: 500 },
+  { skill: 'React', area: 334 },
+  { skill: 'Office', area: 1000 },
+  { skill: 'Internet', area: 68 },
+  { skill: 'Planos', area: 45 },
+  { skill: 'Estructura', area: 29 },
+  { skill: 'Python', area: 27 },
+  { skill: 'HTML', area: 26 },
 ];
 const softSkills = [
   { skill: 'Oratoria', area: 30 },

@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Selector() {
+export default function Selector({selector, setSelector}) {
   const classes = useStyles();
-  const [selector, setSelector] = React.useState('');
+  
   const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
@@ -33,7 +33,7 @@ export default function Selector() {
   const handleOpen = () => {
     setOpen(true);
   };
-  const areas = ['Comercial, Ventas y Negocios','Administración, Contabilidad y Finanzas','Tecnología, Sistemas y Telecomunicaciones','Producción y Manufactura','Oficios y Otros','Abastecimiento y Logística','Salud, Medicina y Farmacia','Recursos Humanos y Capacitación']
+  const areas = ['Comercial', "Tecnologia", 'Producción','Abastecimiento']
 
   return (
     <div>

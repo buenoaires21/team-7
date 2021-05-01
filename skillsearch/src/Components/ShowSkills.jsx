@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState}from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Selector from "./Selector"
 import {
@@ -52,15 +52,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ShowSkills() {
+  const [selector,setSelector]=useState("")
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   const [chipData, setChipData] = React.useState([
-    { key: 0, label: "Angular" },
-    { key: 1, label: "jQuery" },
-    { key: 2, label: "Polymer" },
-    { key: 3, label: "React" },
-    { key: 4, label: "Vue.js" },
+
+    { key: 0, label: "Angular" , area:"Tecnologia"},
+    { key: 1, label: "jQuery", area:"Tecnologia" },
+    { key: 2, label: "Polymer" ,area:"Tecnologia"},
+    { key: 3, label: "React", area:"Tecnologia"},
+    { key: 5, label: "Vue.js", area:"Tecnologia"},
+    { key: 6, label: "Oratoria", area:"Comercial"},
+    { key: 7, label: "Liderazgo", area:"Comercial"},
+    { key: 8, label: "Transporte", area:"Abastecimiento"},
+    { key: 9, label: "Distribución", area:"Abastecimiento"},
+    { key: 10, label: "Compras", area:"Abastecimiento"},
+    { key: 11, label: "Mantenimiento", area:"Producción"},
+    { key: 12, label: "Calidad", area:"Producción"},
+    { key: 13, label: "Auditoria", area:"Producción"},
+    { key: 14, label: "Consultoria", area:"Producción"},
+   
+
+
+
   ]);
+
   
 
   return (
@@ -79,7 +95,7 @@ export default function ShowSkills() {
       
       
             <Typography style={{ marginTop: "2%" }}>Áreas</Typography>
-            <Selector/> 
+            <Selector setSelector={setSelector} selector={selector}/> 
               <Box
                 style={{
                     flexDirection: "column",

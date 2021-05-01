@@ -16,7 +16,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Interaction from "./Interaction";
 import Tooltip from "@material-ui/core/Tooltip";
-import Modal from "@material-ui/core/Modal";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "lightgray",
@@ -68,7 +68,14 @@ export default function EditSkills() {
   return (
     <Box className={classes.cont}>
       <Card className={classes.root} variant="outlined">
-        <Typography>Añadir habilidad</Typography>
+        <Typography
+          style={{ marginTop: "2%" }}
+          component="h1"
+          variant="h4"
+          align="center"
+        >
+          Añadir habilidad
+        </Typography>
         <CardContent>
           <form className={classes.root} noValidate autoComplete="off">
             <Box
